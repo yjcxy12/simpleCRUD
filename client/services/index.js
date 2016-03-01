@@ -1,9 +1,11 @@
 import superagent from 'superagent';
 
+const origin = location.origin;
+
 export function getUserList() {
     return new Promise((resolve, reject) => {
         superagent
-            .get('/users')
+            .get(`${origin}/users`)
             .end((err, res) => {
                 if (err !== null) {
                     return reject(err);
@@ -43,7 +45,7 @@ export function getUserList() {
 export function createUser(user) {
     return new Promise((resolve, reject) => {
         superagent
-            .post('/users/new')
+            .post(`${origin}/users/new`)
             .send(user)
             .end((err, res) => {
                 if (err !== null) return reject(err);
@@ -60,7 +62,7 @@ export function createUser(user) {
 export function updateUser(user) {
     return new Promise((resolve, reject) => {
         superagent
-            .put(`/users/${user.id}`)
+            .put(`${origin}/users/${user.id}`)
             .send(user)
             .end((err, res) => {
                 if (err !== null) return reject(err);
@@ -75,7 +77,7 @@ export function updateUser(user) {
 export function removeUser(id) {
     return new Promise((resolve, reject) => {
         superagent
-            .del(`/users/${id}`)
+            .del(`${origin}/users/${id}`)
             .end((err, res) => {
                 if (err !== null) return reject(err);
                 return resolve(res.body);

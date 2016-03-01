@@ -17,9 +17,9 @@ function _errorValidation(next) {
 }
 
 function _generateId(userList) {
-    return userList.reduce((acc, current) =>
+    return (userList.reduce((acc, current) =>
         Math.max(acc, current.id)
-    , 0) + 1;
+    , 0) + 1).toString();
 }
 
 function _validateName(name) {
@@ -105,8 +105,8 @@ router.put('/users/:id', (req, res, next) => {
         editUser.surname = editUser.surname.trim();
 
         const newUserList = userList.map((user) => {
-            if (user.id !== user.id) return user;
-            return user;
+            if (user.id !== editUser.id) return user;
+            return editUser;
         });
 
         // Write result

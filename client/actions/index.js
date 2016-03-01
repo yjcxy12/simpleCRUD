@@ -25,11 +25,10 @@ export function getUserList() {
                 userList: res
             });
         })
-        .catch((error) => {
+        .catch(() => {
             dispatch({
                 type: SERVER_CALL_ERROR,
-                message: 'Call get user list failed',
-                error
+                message: 'Call get user list failed'
             });
         });
     };
@@ -52,11 +51,10 @@ export function createUser(firstname, surname, category) {
                 error: res.error
             });
         })
-        .catch((error) => {
+        .catch(() => {
             dispatch({
                 type: SERVER_CALL_ERROR,
-                message: 'Create user failed',
-                error
+                message: 'Create user failed'
             });
         });
     };
@@ -79,11 +77,10 @@ export function updateUser(id, firstname, surname, category) {
                 error: res.error
             });
         })
-        .catch((error) => {
+        .catch(() => {
             dispatch({
                 type: SERVER_CALL_ERROR,
-                message: 'Update user failed',
-                error
+                message: 'Update user failed'
             });
         });
     };
@@ -101,11 +98,10 @@ export function removeUser(id) {
                 error: res.error
             });
         })
-        .catch((error) => {
+        .catch(() => {
             dispatch({
                 type: SERVER_CALL_ERROR,
-                message: 'Remove user failed',
-                error
+                message: 'Remove user failed'
             });
         });
     };
