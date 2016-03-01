@@ -9,6 +9,10 @@ After cloning the repository (or download it), install dependancies.
 ```bash
 npm install
 ```
+Install babel-cli to build this project
+```bash
+npm install -g babel-cli
+```
 Test Command
 ```bash
 npm run test
