@@ -17,16 +17,20 @@ Test Command
 ```bash
 npm run test
 ```
-Start server in develop mode (source-map)
-```bash
-npm run start
-```
-Start server in production mode (minified and uglified)
+Start server in develop mode (source-map). 
+Then go to url http://localhost:3000
 ```bash
 npm run start:dev
 ```
+Start server in production mode (minified and uglified). 
+Then go to url http://localhost:3000
+```bash
+npm run start
+```
 
 ## Functionality
+
+"database" file is in "dist/data.json".
 
 ### Create User
 
