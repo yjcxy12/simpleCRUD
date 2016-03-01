@@ -1,10 +1,7 @@
-/**
- * This file is only used for webpack-dev-server. 
- */
-
 var webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     context: path.join(__dirname, './'),
@@ -13,18 +10,10 @@ module.exports = {
     },
     output: {
         path: path.join(__dirname, './dist'),
-        filename: 'bundle.js',
+        filename: 'public/bundle.min.js',
     },
     module: {
         loaders: [
-            {
-                test: /\.scss$/,
-                loaders: [
-                    'style',
-                    'css',
-                    'sass'
-                ]
-            },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
@@ -32,6 +21,10 @@ module.exports = {
                     'react-hot',
                     'babel-loader'
                 ]
+            },
+            {
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader')
             }
         ],
     },
@@ -44,17 +37,15 @@ module.exports = {
         extensions: ['', '.js']
     },
     plugins: [
+        new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.DefinePlugin({
-            'process.env': { NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development') }
+        'process.env.NODE_ENV': JSON.stringify('development')
         }),
         new HtmlWebpackPlugin({
-            template: './client/index.html',
-            inject: true
+            template: './client/index.html', // Move the index.html file...
+            inject: false
         }),
+        new ExtractTextPlugin("public/style.css")
     ],
-    devTool: 'source-map',
-    devServer: {
-        contentBase: './lib',
-        hot: true
-    }
+    devtool: 'source-map'
 };

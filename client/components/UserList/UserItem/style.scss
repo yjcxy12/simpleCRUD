@@ -1,0 +1,25 @@
+.user-list--user-item--container {
+    padding: 0 20%;
+}
+
+.user-list--user-item--item {
+    padding: 30px 0;
+    position: relative;
+}
+
+.user-list--user-item--button-container {
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    right: 0;
+}
+
+.user-list--user-item--button {
+    margin: 0 10px;
+}
+
+.user-list--user-item--secondary-text {
+    color: #999;
+    font-size: 90%;
+    margin-left: 30px;
+}

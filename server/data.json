@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "firstname": "Jeff",
+        "surname": "Stelling",
+        "category": "admin"
+    },
+    {
+        "id": "2",
+        "firstname": "Chris",
+        "surname": "Kamara",
+        "category": "developer"
+    },
+    {
+        "id": "3",
+        "firstname": "Jim",
+        "surname": "White",
+        "category": "developer"
+    },
+    {
+        "id": "4",
+        "firstname": "Natalie",
+        "surname": "Sawyer",
+        "category": "designer"
+    }
+]

@@ -1,0 +1,19 @@
+.header--container, .header--top {
+    padding: 10px 0;
+}
+
+.header--title {
+    border-right: 3px solid lighten(#2c3e50, 20%);
+    color: white;
+    display: inline-block;
+    font-size: 200%;
+    font-weight: 400;
+    margin: 0 0 0 20px;
+    padding-right: 20px;
+    vertical-align: middle;
+}
+
+.header--create-new {
+    margin-left: 20px;
+    vertical-align: middle;
+}

@@ -11,6 +11,9 @@
     "no-this-before-super": 2,
     // suggest using of const declaration for variables that are never modified after declared
     "prefer-const": 1,
-    "react/jsx-boolean-value": 0
+    "react/jsx-boolean-value": 0,
+    "react/jsx-indent-props": 0,
+    "react/jsx-closing-bracket-location": 0,
+    "react/jsx-no-bind": 0
   }
 }
